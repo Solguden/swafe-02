@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getData } from "../util/api";
 import './Trainer.css'
+import { handleResponse } from '../Login/handle-response';
+import { authHeader } from '../Login/auth-header'
 // import Spinner from "./ui/Spinner";
 // import axios from 'axios';
 
@@ -29,9 +31,11 @@ export function Trainer() {
 
     useEffect(() => {
       async function getUsers() {
-        const userresp = await getData("http://localhost:3001/users");
+        const requestOptions = { method: 'GET', headers: authHeader() };
+        const userresp = await fetch(`https://afe2021fitness.azurewebsites.net/api/Users/Clients`, requestOptions).then(handleResponse);
         const userdata = await (userresp);
         setUsers(userdata);
+        console.log(users)
       }
       getUsers();
     }, []);
@@ -57,7 +61,7 @@ export function Trainer() {
       <p>Clients</p>
       <ul>
         {users.map(u => (
-          <li key={u.id}>{u.name}</li>
+          <li key={u.userId}>{u.firstName}</li>
         ))}
       </ul>
       <button type="button">Add new Client</button>
