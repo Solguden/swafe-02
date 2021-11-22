@@ -9,6 +9,7 @@ import { Home } from './Layout/Home';
 import { Client } from './Client/Client'
 import { Manager } from './Manager/Manager'
 import { Trainer } from './Trainer/Trainer'
+import { Login } from './Login/Login'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/client" element={<Client />} />
           <Route path="/manager" element={<Manager />} />
           <Route path="/trainer" element={<Trainer />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>
