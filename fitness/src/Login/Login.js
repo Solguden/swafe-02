@@ -61,8 +61,8 @@ export function Login () {
     <main>
       <p>Login as:</p>
       <button onClick={setManager}>Manager</button>
-      <button onClick={setClient}>Trainer</button>
-      <button onClick={setTrainer}>Client</button>
+      <button onClick={setTrainer}>Trainer</button>
+      <button onClick={setClient}>Client</button>
 
       <form onSubmit={handleSubmit}>
           <label>
