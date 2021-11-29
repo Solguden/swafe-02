@@ -43,7 +43,8 @@ export function Trainer() {
     const [workouts, setWorkouts] = useState(null);
     useEffect(() => {
       async function getWorkouts() {
-        const workoutresp = await getData("http://localhost:3001/bookables");
+        const requestOptions = { method: 'GET', headers: authHeader() };
+        const workoutresp = await fetch("https://afe2021fitness.azurewebsites.net/api/WorkoutPrograms/trainer", requestOptions).then(handleResponse);
         const workoutdata = await (workoutresp);
         setWorkouts(workoutdata);
       }
@@ -51,7 +52,7 @@ export function Trainer() {
     }, []);
 
 
-  if (users === null || workouts === null) {
+  if (users === null || users === undefined|| workouts === null || workouts === undefined) {
     return <p>Trainer (Found nothing/Loading)</p>
     //<Spinner />
   }

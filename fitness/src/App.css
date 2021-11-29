@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  background-color: #ee3253;
+
+  
+}
+
+.App h1 {
+  background-color:aqua;
 }
 
 .App-logo {
@@ -26,6 +33,33 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.router-view{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.routes{
+  width: 70%;
+  min-height: 500px;
+  padding: 20px;
+  background-color: #ffeec3;
+}
+
+.filler-left{
+  width: 15%;
+  background-color: #ee3253;
+}
+
+.filler-right{
+  width: 15%;
+  background-color: #ee3253;
+}
+
+.footer{
+  height: 200px;
 }
 
 @keyframes App-logo-spin {

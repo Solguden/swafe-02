@@ -3,6 +3,8 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
+  useRoutes
 } from "react-router-dom";
 import { Navbar } from './Layout/Navbar';
 import { Home } from './Layout/Home';
@@ -17,16 +19,25 @@ function App() {
       <div className="App">
         <h1>Fitness app</h1>
         <Navbar />
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/client" element={<Client />} />
-          <Route path="/manager" element={<Manager />} />
-          <Route path="/trainer" element={<Trainer />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+        <div className="router-view">
+          <div className="filler-left"></div>
+          <div  className="routes">
+            <Routes>
+              <Route path="/home" element={<Home />} />
+              <Route path="/client" element={<Client />} />
+              <Route path="/manager" element={<Manager />} />
+              <Route path="/trainer" element={<Trainer />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </div>
+          <div className="filler-right"></div>
+        </div>
+        <div className="footer"></div>
       </div>
     </Router>
   );
 }
+
+
 
 export default App;

@@ -8,5 +8,8 @@ export function getData(url) {
         }
   
         return resp.json();
+      })
+      .catch( error => {
+        console.log(error)
       });
   }

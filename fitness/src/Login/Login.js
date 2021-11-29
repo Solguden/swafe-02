@@ -59,26 +59,28 @@ export function Login () {
 
   return (
     <main>
-      <p>Login as:</p>
-      <button onClick={setManager}>Manager</button>
-      <button onClick={setTrainer}>Trainer</button>
-      <button onClick={setClient}>Client</button>
+      <div className="wrapper">
+        <p>Login as:</p>
+          <button onClick={setManager}>Manager</button>
+          <button onClick={setTrainer}>Trainer</button>
+          <button onClick={setClient}>Client</button>
 
-      <form onSubmit={handleSubmit}>
-          <label>
-            Email:
-            <input type="email" value={state.email} onChange={handleChangeEmail}></input>
-          </label>
-          <br/>
-          <label>
-            Password:
-            <input type="password" value={state.password} onChange={handleChangePassword}></input>
-          </label>
-          <br/>
-          <input type="submit" value="Login"></input>
-      </form>
-      <button onClick={getAll}>Test</button>
-      <button onClick={logout}>Logout</button>
+          <form onSubmit={handleSubmit}>
+              <label>
+                Email:
+                <input type="email" value={state.email} onChange={handleChangeEmail}></input>
+              </label>
+              <br/>
+              <label>
+                Password:
+                <input type="password" value={state.password} onChange={handleChangePassword}></input>
+              </label>
+              <br/>
+              <input type="submit" value="Login"></input>
+          </form>
+          <button onClick={getAll}>Test</button>
+          <button onClick={logout}>Logout</button>
+        </div>
     </main>
   );
 }
